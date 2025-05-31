@@ -9,30 +9,30 @@ const users = [
 ];
 
 const app = express();
-
-// Use process.env.PORT for Glitch compatibility
 const PORT = process.env.PORT || 4000;
 
-app.get("/", (req, res) => {
+app.get("/", function (req, res) {
   res.send(`Hello<br>This is Home Page!`);
 });
 
-app.get("/about", (req, res) => {
+app.get("/about", function (req, res) {
   res.send("This is About page!");
 });
 
-app.get("/contact", (req, res) => {
+app.get("/contact", function (req, res) {
   res.send("This is Contact Page");
 });
 
-app.get("/users", (req, res) => {
+app.get("/users", function (req, res) {
   res.json(users);
 });
 
 app.use((req, res) => {
-  res.status(404).send("404 Not Found - The page you are looking for does not exist.");
+  res
+    .status(404)
+    .send("404 Not Found - The page you are looking for does not exist.");
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, function () {
   console.log(`Server is running on port ${PORT}`);
 });
