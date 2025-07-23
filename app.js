@@ -9,7 +9,7 @@ const users = [
 ];
 
 const app = express();
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT;
 
 app.get("/", function (req, res) {
   res.send(`Hello<br>This is Home Page!`);
